@@ -20,6 +20,6 @@ class BookController extends Controller
     }
 
     public function dashboard(){
-        return view('dashboard.index');
+        return view('layouts.main');
     }
 }

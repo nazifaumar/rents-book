@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
@@ -23,7 +24,16 @@ class AuthController extends Controller
             'address' => 'required',
         ]);
 
-        User::create($request->all());
+        $user = new User([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+            'phone' =>  $request->phone,
+            'address' => $request->address,
+        ]);
+
+        $user->save();
+
         return redirect('/');
     }
 
@@ -41,9 +51,11 @@ class AuthController extends Controller
             'name.exists' => "This username doesn't exists"
         ]);
 
-        Auth::attempt($validate);
-        $request->session()->regenerate();
-        return redirect()->route('dashboard.index');
+        if(Auth::attempt($validate)){
+            $request->session()->regenerate();
+            return redirect()->route('layouts.main');
+       };
+       return redirect()->route('login');
     }
 
     public function logout()

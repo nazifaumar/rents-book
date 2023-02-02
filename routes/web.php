@@ -30,4 +30,4 @@ Route::get('/logout', [AuthController::class, 'logout']);
 
 Route::post('/store', [BookController::class, 'storePesan'])->name('store');
 
-Route::get('/dashboard', [BookController::class, 'dashboard'])->name('dashboard.index');
+Route::get('/dashboard', [BookController::class, 'dashboard'])->name('layouts.main');

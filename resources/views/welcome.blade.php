@@ -85,7 +85,7 @@
         <div class="row">
             <div class="col-lg-4">
                 <h2>Vinnie's Books</h2>
-                <a href="/logout" class="btn btn-outline-dark">Mari daftar sekarang !</a>
+                <a href="/register" class="btn btn-outline-dark">Mari daftar sekarang !</a>
             </div>
             <div class="col-lg-8">
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit sunt distinctio eaque voluptatem earum
@@ -176,7 +176,7 @@
     {{-- Footer --}}
     <footer class="bg-black text-center" style="height: 40px">
         <p class="text-white"> Created by <a href="https://www.instagram.com/jpp.ur/" target="_blank"
-                style="text-decoration: none; color:rgba(240, 248, 255, 0.31);">Vinnie's</a></p>
+                style="text-decoration: none; color:rgba(240, 248, 255, 0.31);">nazifaumar</a></p>
     </footer>
     {{-- Akhir Footer --}}
 

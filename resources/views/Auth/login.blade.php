@@ -45,7 +45,7 @@
               <label for="inputCity" class="form-label">Password</label>
               <input type="password" name="password" class="form-control" id="inputCity">
               @error('password')
-              <div class="error" style="color: crimson;">{{$message}}</div>
+              <div class="error" style="color: rgb(158, 66, 84);">{{$message}}</div>
               @enderror
             </div>
             <div class="col-12 d-grid gap-2 mx-auto">
