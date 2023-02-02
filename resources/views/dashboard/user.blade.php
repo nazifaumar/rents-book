@@ -1,7 +1,9 @@
 @extends('layouts.main')
 @section('content')
 @section('title', 'user')
-<h1>User's Data</h1>
+<br>
+<h1><strong>User's Data</strong></h1>
+<br>
 <table class="table dark">
     <thead>
       <tr>
