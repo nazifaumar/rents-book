@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BookController;
 use Illuminate\Support\Facades\Route;
@@ -9,9 +10,6 @@ Route::get('/', function () {
 // DASHBOARD 
 Route::get('/dashIndex', function () {
     return view('dashboard.index');
-});
-Route::get('/user', function () {
-    return view('dashboard.user');
 });
 Route::get('/book', function () {
     return view('dashboard.book');
@@ -33,3 +31,6 @@ Route::get('/logout', [AuthController::class, 'logout']);
 Route::post('/store', [BookController::class, 'storePesan'])->name('store');
 //DASHBOARD
 Route::get('/dashboard', [BookController::class, 'dashboard'])->name('layouts.main');
+Route::get('/user', [AdminController::class, 'user']);
+
+Route::delete('/delete/{id}', [AdminController::class, 'destroy']);

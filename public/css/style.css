@@ -1,0 +1,58 @@
+::-webkit-scrollbar{
+    display: none;
+  } 
+  .main{
+    height: 100vh;
+}
+.sidebar{
+    background-color: #fff;
+    
+}
+.sidebar a{
+    text-decoration: none;
+    display: block;
+    color: black;
+    padding: 15px 40px;
+}
+.sidebar a:hover{
+    color: #2a5298;
+}
+.sidebar a.active{
+    background-color: #eee;
+    border-right: solid 3px  #444545;
+}
+.content{
+    background-color: rgba(238,238,238,255);
+    color: black;
+    padding: 10px;
+    border-radius: 15px;
+}
+.card-data{
+    color: black;
+    padding: 20px 40px;
+}
+.card-data.book{
+    background-color: hsl(351, 53%, 90%);
+    border-radius: 10px;
+}
+.card-data.category{
+    background-color: hsl(218, 78%, 85%);
+    border-radius: 10px;
+
+}
+
+.card-data.user{
+    background-color: hsl(52, 79%, 85%);
+    border-radius: 10px;
+
+}
+.card-data i{
+    font-size: 35px;
+}
+.card-desc{
+    font-size: 20px;
+}
+.card-count{
+    font-size: 20px;
+}
+
