@@ -25,7 +25,7 @@ class AuthController extends Controller
         ]);
 
         $user = new User([
-            'name' => Hash::make($request->name),
+            'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
             'phone' =>  $request->phone,
@@ -53,7 +53,7 @@ class AuthController extends Controller
 
         if(Auth::attempt($validate)){
             $request->session()->regenerate();
-            return redirect()->route('layouts.main');
+            return redirect()->route('dashboard.index');
        };
        return redirect()->route('login');
     }

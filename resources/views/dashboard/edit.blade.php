@@ -1,9 +1,10 @@
 @extends('layouts.main')
 @section('content')
-@section('title', 'category')
+@section('title', 'create')
+
 <div class="card bg-glass" style="border-radius: 15px"><br>
     <h3 style="text-align: center"><strong></strong></h3><br>
-    <form class="p-3 row g-3 rounded-xl border-gray min-w-sm p-4 my-auto" "
+    <form class="p-3 row g-3 rounded-xl border-gray min-w-sm p-4 my-auto" action="/update/{{ $data['id'] }}"
         method="POST">
         @csrf
         <div class="col-6">
@@ -36,4 +37,5 @@
         </div>
     </form>
 </div>
+
 @endsection
