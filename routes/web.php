@@ -44,6 +44,3 @@ Route::delete('/delete/{id}', [AdminController::class, 'destroy']);
 Route::get('/edit/{id}', [AdminController::class, 'edit'])->name('edit');
 Route::patch('/update/{id}',[AdminController::class,'update'])->name('update');
 
-Route::get('/test', function () {
-    return view('dashboard.edit');
-});

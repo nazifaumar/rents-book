@@ -37,7 +37,6 @@
               <input type="text" name="name" class="form-control" id="inputEmail4">
               @error('name')
               <div class="error" style="color: crimson;">{{$message}}</div>
-              <!-- berhasilgak? -->
               @enderror
             </div>
 

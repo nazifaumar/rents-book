@@ -24,9 +24,9 @@
                 <td>{{ $item->phone }} </td>
                 <td>{{ $item->address }} </td>
                 <td style="text-align: center">
-                    <form action="/edit/{{ $item['id'] }}" method="GET" class="d-inline">
-                        <button type="submit" class="btn btn-warning text-white">Edit</button>
-                    </form>
+                    <button id="editUser" class="btn btn-primary text-white me-2" data-toggle="modal"
+                        data-target='#edit_modal' data-id="{{ $item->id }}">Edit</button>
+                    <!-- Modal -->
                     <form action="/delete/{{ $item['id'] }}" method="POST" class="d-inline">
                         @csrf
                         @method('delete')
@@ -40,4 +40,58 @@
         {!! $data->links() !!}
     </div>
 </table>
+
+<div class="modal fade" id="edit_modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Account</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form id="formId" action="" method="POST">
+                @csrf
+                @method('PATCH')
+                <div class="modal-body">
+                    <div class="col-12">
+                        <label for="inputEmail4" class="form-label"><strong>Name</strong></label>
+                        <input type="text" name="name" id="name" value="" class="form-control">
+                    </div>
+
+                    <div class="col-12">
+                        <label for="inputPassword4" class="form-label"><strong>Email</strong></label>
+                        <input type="email" name="email" id="email" value="" class="form-control">
+                    </div>
+
+                    <div class="col-12">
+                        <label class="form-label"><strong>Phone</strong></label>
+                        <input type="number" name="phone" id="phone" value="" class="form-control">
+                    </div>
+
+                    <div class="col-12">
+                        <label class="form-label"><strong>Password</strong></label>
+                        <input name="password" type="password" value="" class="input form-control" id="password"
+                            aria-label="password" aria-describedby="basic-addon1" />
+                        <div class="input-group-append">
+                            <span class="input-group-text" onclick="password_show_hide();">
+                                <i class="fas fa-eye" id="show_eye"></i>
+                                <i class="fas fa-eye-slash d-none" id="hide_eye"></i>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <label for="inputAddress" class="form-label"><strong>Address</strong></label>
+                        <textarea class="form-control" name="address" id="address"></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" id="submit" class="btn btn-primary">Save changes</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
 @endsection

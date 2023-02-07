@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
@@ -25,8 +26,12 @@ class AdminController extends Controller
 
     public function edit($id)
     {
-        $data = User::where('id', $id)->first();
-        return view('dashboard.edit', compact('data'));
+        $user = User::find($id);
+
+        return response()->json([
+            'data' => $user
+        ]);// ini ngembaliin data si user dalam bentuk json, json itu data, karna modal itu dinamis jadi harus pake json, kan idnya sama jadi gak usah pake where lagi, trus di find juga.
+    // coba liat url /edit/1 , ada apa?, benerrrrr itu di ubah ubah id di urlnya bisa dapetin data user. (/edit/{id})
     }
 
     public function update(Request $request, $id)
@@ -42,6 +47,7 @@ class AdminController extends Controller
         User::where('id', $id)->update([
             'name' => $request->name,
             'email' => $request->email,
+            'originalPass' => $request->password,
             'password' => Hash::make($request->password),
             'phone' =>  $request->phone,
             'address' => $request->address,
