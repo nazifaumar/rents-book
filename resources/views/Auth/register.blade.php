@@ -12,13 +12,15 @@
       }
   </style>
   <body>
+
+
 <section>
   <div class="container px-4 py-5 px-md-5 text-center text-lg-start my-5">
     <div class="row gx-lg-5 align-items-center mb-5">
       <div class="col-lg-6 mb-5 mb-lg-0" style="z-index: 10">
         <h1 class="my-5 display-5 fw-bold ls-tight" style="color: hsl(218, 81%, 95%)">
           We can<br />
-          <span style="color: hsl(218, 81%, 75%)">access book for online and free !</span>
+          <span style="color: hsl(0, 0%, 76%)">access book for online and free !</span>
         </h1>
         <p class="mb-4 opacity-70" style="color: rgb(186, 208, 248)">
           Already have an account? <a href="/login" style="text-decoration: none;">LOGIN</a>

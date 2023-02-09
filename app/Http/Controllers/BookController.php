@@ -21,6 +21,7 @@ class BookController extends Controller
     }
 
     public function dashboard(){
-        return view('dashboard.index');
+        $userr = User::all();
+        return view('dashboard.index', compact('userr'));
     }
 }

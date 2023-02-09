@@ -36,7 +36,7 @@ class AuthController extends Controller
 
         $user->save();
 
-        return redirect('/');
+        return redirect('/')->with('danger', 'Yey, Data berhasil di hapus !');
     }
 
     public function login()

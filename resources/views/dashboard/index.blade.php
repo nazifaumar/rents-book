@@ -2,7 +2,16 @@
 @section('content')
 @section('title', 'dashboard')
 <br>
-<h1><strong>Halo, Admin! </strong></h1>
+@if (Session::get('danger'))
+<div class="alert alert-danger">
+    {{Session::get('danger')}}
+</div>
+@endif
+<h3><strong>Hi, admin!</strong></h3>
+<h6>Selamat Datang</h6>
+
+
+
 <div class="row my-5">
     <div class="col-lg-4">
         <div class="card-data book">
@@ -53,7 +62,7 @@
                         User
                     </div>
                     <div class="card-count">
-                        5
+                        {{$userr->where('=', null)->count()}}
                     </div>
                 </div>
             </div>

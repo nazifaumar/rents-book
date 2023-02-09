@@ -35,7 +35,6 @@
                     </span>
                 </div>
             </div>
-            <!-- cobainnnnn, biwsa gakkkk -->
         </div>
 
         <div class="col-12">

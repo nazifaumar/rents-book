@@ -1,21 +1,23 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
 ::-webkit-scrollbar{
     display: none;
   } 
-  .main{
+.main{
     height: 100vh;
 }
 .sidebar{
-    background-color: #fff;
-    
+    background-color: #fff;    
 }
 .sidebar a{
     text-decoration: none;
     display: block;
-    color: black;
+    color: #444545;
     padding: 15px 40px;
 }
 .sidebar a:hover{
-    color: #2a5298;
+    color: #000000;
 }
 .sidebar a.active{
     background-color: #eee;
@@ -25,26 +27,30 @@
     background-color: rgba(238,238,238,255);
     color: black;
     padding: 10px;
-    border-radius: 15px;
+
 }
 .card-data{
     color: black;
     padding: 20px 40px;
 }
 .card-data.book{
-    background-color: hsl(351, 53%, 90%);
+    background-color: white;
+    box-shadow: 10px 5px 5px 2px rgb(210, 206, 206);
+    border-top: 10px solid black !important;
     border-radius: 10px;
 }
 .card-data.category{
-    background-color: hsl(218, 78%, 85%);
+    background-color: white;
+    box-shadow: 10px 5px 5px 2px rgb(210, 206, 206);
+    border-top: 10px solid black !important;
     border-radius: 10px;
-
 }
 
 .card-data.user{
-    background-color: hsl(52, 79%, 85%);
+    background-color: white;
+    box-shadow: 10px 5px 5px 2px rgb(210, 206, 206);
+    border-top: 10px solid black !important;
     border-radius: 10px;
-
 }
 .card-data i{
     font-size: 35px;
@@ -55,5 +61,11 @@
 .card-count{
     font-size: 20px;
 }
-
-
+.wanjay{
+    border-radius: 5px;
+height: 70px;
+width: 1160px;
+background-color: #ffffff;
+margin-right: 15px;
+box-shadow: 10px 5px 5px 2px rgb(210, 206, 206);
+}

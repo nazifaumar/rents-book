@@ -10,9 +10,7 @@ Route::get('/', function () {
 });
 
 // DASHBOARD 
-Route::get('/dashIndex', function () {
-    return view('dashboard.index');
-});
+
 Route::get('/book', function () {
     return view('dashboard.book');
 });
@@ -40,6 +38,7 @@ Route::get('/dashboard', [BookController::class, 'dashboard'])->name('dashboard.
 Route::get('/user', [AdminController::class, 'user']);
 
 Route::delete('/delete/{id}', [AdminController::class, 'destroy']);
+// Route::get('/dashIndex', [AdminController::class, 'dashboardIndex'])->name('dashboardIndex');
 //EDIT
 Route::get('/edit/{id}', [AdminController::class, 'edit'])->name('edit');
 Route::patch('/update/{id}',[AdminController::class,'update'])->name('update');

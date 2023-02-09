@@ -10,10 +10,15 @@ use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
 {
+
+    // public function dashboardIndex(){
+    //     $userr = User::all();
+    //     return view('dashboard.index', compact('userr'));
+    // }
+
     public function user()
     {
-        // kalau mau tampilan paginatenya simple pake simplePaginate(), defau
-        $data = User::latest()->simplePaginate(15);
+        $data = User::latest()->simplePaginate(7);
         return view('dashboard.user', compact('data'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
@@ -21,8 +26,8 @@ class AdminController extends Controller
     public function destroy($id)
     {
         User::where('id', $id)->delete();
-        return redirect()->back();
-    }
+        return redirect('/user')->with('danger', 'Yey, Data berhasil di hapus !');
+    } 
 
     public function edit($id)
     {
@@ -30,8 +35,9 @@ class AdminController extends Controller
 
         return response()->json([
             'data' => $user
-        ]);// ini ngembaliin data si user dalam bentuk json, json itu data, karna modal itu dinamis jadi harus pake json, kan idnya sama jadi gak usah pake where lagi, trus di find juga.
-    // coba liat url /edit/1 , ada apa?, benerrrrr itu di ubah ubah id di urlnya bisa dapetin data user. (/edit/{id})
+        ]);
+        // ini ngembaliin data user dalam bentuk json, karna modal itu dinamis jadi harus pake json, 
+        //kan idnya sama jadi gak usah pake where lagi, trus di find juga.
     }
 
     public function update(Request $request, $id)

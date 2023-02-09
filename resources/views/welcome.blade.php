@@ -10,9 +10,11 @@
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 </head>
-</style>
 
 <body>
+    
+
+
 
     {{-- Awal Navbar     --}}
     <nav class="navbar navbar-dark navbar-expand-lg bg-black  ">
@@ -48,6 +50,11 @@
             </div>
         </div>
     </nav>
+    @if (Session::get('success'))
+<div class="alert alert-success">
+    {{Session::get('success')}}
+</div>
+@endif
     {{-- Akhir Navbar --}}
 
     {{-- Carousel --}}

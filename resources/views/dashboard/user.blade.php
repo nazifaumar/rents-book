@@ -1,12 +1,19 @@
 @extends('layouts.main')
 @section('content')
 @section('title', 'user')
-<br>
-<h1><strong>User's Data</strong></h1>
-<br>
+<br><h1><strong>User's Data</strong></h1><br>
+@if (Session::get('danger'))
+<div class="alert alert-danger alert-dismissible">
+    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    <strong>Success!</strong> This account has been successfully deleted.
+  </div>
+@endif
+<div class="row text-center">
+    {!! $data->links() !!}
+</div><br>
 <table class="table dark">
     <thead>
-        <tr style="text-align: center">
+        <tr style="text-align: center" class="table-striped">
             <th scope="col">No</th>
             <th scope="col">Name</th>
             <th scope="col">Email</th>
@@ -36,9 +43,6 @@
             </tr>
         </tbody>
     @endforeach
-    <div class="row text-center">
-        {!! $data->links() !!}
-    </div>
 </table>
 
 <div class="modal fade" id="edit_modal">
@@ -86,12 +90,10 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" id="submit" class="btn btn-primary">Save changes</button>
+                    <button type="submit" id="submit" class="btn btn-primary">Save</button>
                 </div>
             </form>
         </div>
     </div>
 </div>
-
-
 @endsection
