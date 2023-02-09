@@ -1,4 +1,4 @@
 @extends('layouts.main')
 @section('content')
-@section('title', 'book')
+@section('title', 'category')
 @endsection

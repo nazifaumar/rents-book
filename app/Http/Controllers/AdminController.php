@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Book;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\Hash;
@@ -25,9 +26,11 @@ class AdminController extends Controller
 
     public function destroy($id)
     {
+        Book::where('id', $id)->delete();
         User::where('id', $id)->delete();
-        return redirect('/user')->with('danger', 'Yey, Data berhasil di hapus !');
+        return redirect()->back()->with('danger', 'Yey, Data berhasil di hapus !');
     } 
+
 
     public function edit($id)
     {

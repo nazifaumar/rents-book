@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BookController;
+use App\Models\Book;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -43,3 +44,13 @@ Route::delete('/delete/{id}', [AdminController::class, 'destroy']);
 Route::get('/edit/{id}', [AdminController::class, 'edit'])->name('edit');
 Route::patch('/update/{id}',[AdminController::class,'update'])->name('update');
 
+Route::get('/book', [BookController::class, 'book'])->name('book');
+Route::get('/newBook', [BookController::class, 'newBook']);
+Route::post('/book', [BookController::class, 'add'])->name('add');
+
+Route::get('/editUser/{id}', [BookController::class, 'editUser'])->name('editUser');
+Route::post('/updateUser/{id}', [BookController::class, 'editUser'])->name('updateUser');
+
+Route::get('/category', [BookController::class, 'category'])->name('category');
+Route::get('/neWCategory', [BookController::class, 'newCategory']);
+Route::post('/category', [BookController::class, 'addCategory'])->name('addCategory');
