@@ -10,15 +10,15 @@
         <hr>
 
         <fieldset>
-            <label for="">Judul</label>
+            <label for="">Title</label>
             <input class="input" type="text" name="title">
             @error('title')
                 <div class="error">{{ $message }}</div>
             @enderror
         </fieldset>
 
-        <fieldset>
-            <label for="">Penulis</label>
+        <fieldset> 
+            <label for="">Writer</label>
             <input class="input" type="text" name="writer">
             @error('writer')
                 <div class="error">{{ $message }}</div>
@@ -26,7 +26,7 @@
         </fieldset>
 
         <fieldset>
-            <label for="">Penerbit</label>
+            <label for="">Publisher</label>
             <input class="input" type="text" name="publisher">
             @error('penerbit')
                 <div class="error">{{ $message }}</div>
@@ -35,15 +35,15 @@
 
 
         <fieldset>
-            <label for="">Sinopsis</label>
-            <textarea class="input" name="sinopsis" tabindex="5"></textarea>
+            <label for="">Synopsis</label>
+            <textarea class="input" name="synopsis" tabindex="5"></textarea>
             @error('sinopsis')
                 <div class="error">{{ $message }}</div>
             @enderror
         </fieldset>
 
         <fieldset>
-            <label for="">Sampul</label>
+            <label for="">Cover</label>
             <input class="input" name="image" id="image" type="file" class="file-upload-field">
             @error('image')
                 <div class="error">{{ $message }}</div>
@@ -58,3 +58,4 @@
 </div>
 
 @endsection
+

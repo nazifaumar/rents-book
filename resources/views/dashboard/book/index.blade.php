@@ -16,16 +16,16 @@
             <th scope="col">Action</th>
         </tr>
     </thead>
-    @foreach ($book as $item)
+    @foreach ($book as $item) 
         <tbody>
-            <tr style="text-align: center">
+            <tr style="text-align: center">             
                 <th scope="row">1</th>
                 <td>{{ $item->title }} </td>
                 <td>{{ $item->writer }} </td>
                 <td>{{ $item->publisher }} </td>
                 <td>{{ $item->synopsis }} </td>
                 <td class="image-table"><img src=" {{ asset('images/'.$item->image) }}"  style="width: 90px;"></td>
-                <td>
+                <td class="d-inline">
                     <form action="" class="d-inline">
                         @csrf
                         <button type="submit" class="btn btn-primary text-white me-2">Edit</button>                     
