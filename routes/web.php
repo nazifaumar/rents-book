@@ -18,6 +18,7 @@ Route::get('/category', function () {
 Route::get('/rentLog', function () {
     return view('dashboard.rentLog');
 });
+
 Route::get('/register', [AuthController::class, 'register'])->name('register');
 Route::post('/register', [AuthController::class, 'inputRegister'])->name('inputRegister');
 Route::get('/login', [AuthController::class, 'login'])->name('login');
@@ -25,7 +26,9 @@ Route::post('/inputLogin', [AuthController::class, 'auth'])->name('loginAuth');
 Route::get('/logout', [AuthController::class, 'logout']);
 Route::post('/store', [BookController::class, 'storePesan'])->name('store');
 Route::get('/dashboard', [BookController::class, 'dashboard'])->name('dashboard.index');
-Route::get('/user', [AdminController::class, 'user']);
+
+Route::get('/user', [AdminController::class, 'user'])->middleware('isAdmin');
+
 Route::delete('/delete/{id}', [AdminController::class, 'destroy']);
 Route::get('/edit/{id}', [AdminController::class, 'edit'])->name('edit');
 Route::patch('/update/{id}',[AdminController::class,'update'])->name('update');

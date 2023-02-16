@@ -35,6 +35,13 @@
           <!-- kebiasaan kamu form gak pake validate error massagenya -->
             <form class=" card shadow p-3 row g-3 rounded-xl border-gray min-w-sm p-4 my-auto" action="/inputLogin" method="POST">
               @csrf
+
+              @if (Session::get('notAllowed'))
+                <div class="alert alert-danger">
+                  {{ Session::get('notAllowed') }}
+                </div>
+              @endif
+              
             <div class="col-12">
               <label for="inputEmail4" class="form-label">Name</label>
               <input type="text" name="name" class="form-control" id="inputEmail4">

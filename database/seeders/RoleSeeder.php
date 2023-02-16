@@ -2,34 +2,52 @@
 
 namespace Database\Seeders;
 
-use App\Models\Role;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class RoleSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
+
     public function run()
-    {
-        Schema::disableForeignKeyConstraints();
-        Role::truncate();
-        Schema::enableForeignKeyConstraints();
+     {
+    //     Schema::disableForeignKeyConstraints();
+    //     Role::truncate();
+    //     Schema::enableForeignKeyConstraints();
 
 
-        $data = [
-            'admin', 'client'
-        ];
+    //     $data = [
+    //         'admin', 'client'
+    //     ];
 
-        foreach ($data as $value)
-        {   
-            Role::insert([
-                'name' => $value 
-            ]);
-        }
+    //     foreach ($data as $value)
+    //     {   
+    //         Role::insert([
+    //             'name' => $value 
+    //         ]);
+    //     }
+
+    DB::table('users')->insert([
+        [
+            'name' => 'nazifa',
+            'email' =>  'nazifaumar@gmail.com',
+            'originalPass' => 'zifa1212',
+            'password' => Hash::make ('zifa1212'),
+            'phone' => '08569070016',
+            'address' => 'bogor',
+            'role_id' => 1
+        ],
+        
+        [
+            'name' => 'sarah',
+            'email' =>  'sarah@gmail.com',
+            'originalPass' => 'zifa1212',
+            'password' => Hash::make ('sarah1212'),
+            'phone' => '08569070016',
+            'address' => 'bandung',
+            'role_id' => 2
+        ]
+        ]);
     }
 }

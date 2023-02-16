@@ -55,9 +55,11 @@ class AuthController extends Controller
 
         if(Auth::attempt($validate)){
             $request->session()->regenerate();
-            return redirect()->route('dashboard.index');
+            if(Auth::user() && Auth::user()->role_id == 1){
+                return redirect()->route('dashboard.index');
+            }
+            return redirect()->route('login');
        };
-       return redirect()->route('login');
     }
 
     public function logout()
