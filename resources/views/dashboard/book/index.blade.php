@@ -13,6 +13,7 @@
             <th scope="col">Publisher</th>
             <th scope="col">Synopsis</th>
             <th scope="col">Image</th>
+            iusnieuweue
             <th scope="col">Action</th>
         </tr>
     </thead>
