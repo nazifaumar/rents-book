@@ -45,7 +45,7 @@
                     <a href="/dashboard" @if (request()->Route()->uri == 'dashboard') class="active" @endif><i class="bi bi-house-fill p-2"></i>Dashboard</a>
                     <a href="/user" @if (request()->Route()->uri == 'user') class="active" @endif><i class="bi bi-person-fill p-2"></i>User</a>
                     <a href="/book" @if (request()->Route()->uri == 'book') class="active" @endif><i class="bi bi-book-fill p-2"></i>Books</a>
-                    <a href="/category" @if (request()->Route()->uri == 'category') class="active" @endif><i class="bi bi-tags-fill p-2"></i>Category</a>
+                    <a href="/newCategory" @if (request()->Route()->uri == 'category') class="active" @endif><i class="bi bi-tags-fill p-2"></i>Category</a>
                     <a href="rentLog" @if (request()->Route()->uri == 'rentLog') class="active" @endif><i class="bi bi-bookmark-fill p-2"></i>Rents Logs</a>
                 </div>
                 <div class="content col-lg-10">

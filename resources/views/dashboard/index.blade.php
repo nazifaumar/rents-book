@@ -21,7 +21,7 @@
                 </div>
                 <div class="col-lg-6 d-flex flex-column justify-content-center align-items-end ">
                     <div class="card-desc">
-                        Books
+                        Book
                     </div>
                     <div class="card-count">
                         5

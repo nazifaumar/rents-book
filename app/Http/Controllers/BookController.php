@@ -48,7 +48,7 @@ class BookController extends Controller
         $request->image->move(public_path('images'), $image);
 
         Book::create([
-            'title'=> $request->title,
+            'title'=> $request->title, 
             'writer'=> $request->writer,
             'publisher'=> $request->publisher,
             'synopsis'=> $request->synopsis,

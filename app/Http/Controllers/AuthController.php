@@ -32,6 +32,7 @@ class AuthController extends Controller
             'password' => Hash::make($request->password),
             'phone' =>  $request->phone,
             'address' => $request->address,
+            'role_id' => 2,
         ]);
 
         $user->save();
@@ -58,11 +59,11 @@ class AuthController extends Controller
             if(Auth::user() && Auth::user()->role_id == 1){
                 return redirect()->route('dashboard.index');
             }
-            return redirect()->route('login');
+            return redirect('/userDash');
        };
     }
 
-    public function logout()
+    public function logout() 
     {
         auth()->logout();
         Session()->flush();

@@ -16,4 +16,5 @@ class Book extends Model
     'synopsis',
     'image',
 ];
+
 }
