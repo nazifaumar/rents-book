@@ -24,13 +24,29 @@ class AdminController extends Controller
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
+    public function editUser($id){
+        $book = Book::where('id',$id)->first();
+        return view ('dashboard.book.index', compact('book'));
+    }
+
+    public function updateUser(Request $request , $id){
+
+        Book::where('id',$id)->update([
+            'title'=> $request->title,
+            'writer'=> $request->writer,
+            'publisher'=> $request->publisher,
+            'synopsis'=> $request->synopsis,
+            'image'=> $request->image,
+        ]);
+        return redirect('book')->with('success', 'berhasil membuat !');
+    }
+
     public function destroy($id)
     {
         Book::where('id', $id)->delete();
         User::where('id', $id)->delete();
         return redirect()->back()->with('danger', 'Yey, Data berhasil di hapus !');
     } 
-
 
     public function edit($id)
     {
@@ -63,4 +79,5 @@ class AdminController extends Controller
         ]);
         return redirect('/user');
     }
+    
 }

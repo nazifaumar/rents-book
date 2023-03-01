@@ -13,7 +13,6 @@
             <th scope="col">Publisher</th>
             <th scope="col">Synopsis</th>
             <th scope="col">Image</th>
-            iusnieuweue
             <th scope="col">Action</th>
         </tr>
     </thead>
@@ -27,10 +26,7 @@
                 <td>{{ $item->synopsis }} </td>
                 <td class="image-table"><img src=" {{ asset('images/'.$item->image) }}"  style="width: 90px;"></td>
                 <td class="d-inline">
-                    <form action="" class="d-inline">
-                        @csrf
-                        <button type="submit" class="btn btn-primary text-white me-2">Edit</button>                     
-                    </form>
+                    <a href="/editBook/{id}" class="btn btn-primary">Edit</a>
                     <form action="/delete/{{ $item['id'] }}" method="POST" class="d-inline">
                         @csrf
                         @method('delete')
