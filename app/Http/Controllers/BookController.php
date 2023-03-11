@@ -60,7 +60,7 @@ class BookController extends Controller
             'image' => $request->departemen,
         ]);
 
-        return redirect ('/book');
+        return redirect ('/dashboard/book');
     }
 
     public function add(Request $request){
@@ -82,7 +82,7 @@ class BookController extends Controller
             'synopsis'=> $request->synopsis,
             'image'=> $image,
         ]);
-        return redirect('/book')->with('success', 'berhasil membuat !');
+        return redirect('/dashboard/book')->with('success', 'berhasil membuat !');
     }
 
     public function category(){

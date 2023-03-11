@@ -43,9 +43,9 @@
             <div class="row g-0 h-100">
                 <div class="sidebar col-lg-2 collapse d-lg-block" id="openClose">
                     <a href="/dashboard" @if (request()->Route()->uri == 'dashboard') class="active" @endif><i class="bi bi-house-fill p-2"></i>Dashboard</a>
-                    <a href="/user" @if (request()->Route()->uri == 'user') class="active" @endif><i class="bi bi-person-fill p-2"></i>User</a>
-                    <a href="/book" @if (request()->Route()->uri == 'book') class="active" @endif><i class="bi bi-book-fill p-2"></i>Books</a>
-                    <a href="/newCategory" @if (request()->Route()->uri == 'category') class="active" @endif><i class="bi bi-tags-fill p-2"></i>Category</a>
+                    <a href="/dashboard/user" @if (request()->Route()->uri == 'user') class="active" @endif><i class="bi bi-person-fill p-2"></i>User</a>
+                    <a href="/dashboard/book" @if (request()->Route()->uri == 'book') class="active" @endif><i class="bi bi-book-fill p-2"></i>Books</a>
+                    <a href="/dashboard/newCategory" @if (request()->Route()->uri == 'category') class="active" @endif><i class="bi bi-tags-fill p-2"></i>Category</a>
                 </div>
                 <div class="content col-lg-10">
                     @yield('content')

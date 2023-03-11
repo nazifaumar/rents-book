@@ -2,7 +2,7 @@
 @section('content')
 @section('title', 'book')
 <br><h1><strong>BOOK DATA</strong></h1><br>
-<a href="/newBook"><button class="btn btn-success">Create +</button></a>
+<a href="/dashboard/newBook"><button class="btn btn-success">Create +</button></a>
 <br><br>
 <table class="table dark">
     <thead>
@@ -26,8 +26,8 @@
                 <td>{{ $item->synopsis }} </td>
                 <td class="image-table"><img src=" {{ asset('images/'.$item->image) }}"  style="width: 90px;"></td>
                 <td class="d-inline">
-                    <a href="/editBook/{id}" class="btn btn-primary">Edit</a>
-                    <form action="/delete/{{ $item['id'] }}" method="POST" class="d-inline">
+                    <a href="/dashboard/book/{id}" class="btn btn-primary" >Edit</a>
+                    <form action="/dashboard/delete/{{ $item['id'] }}" method="POST" class="d-inline">
                         @csrf
                         @method('delete')
                         <button type="submit" class="btn btn-danger text-white me-2">Delete</button>    
